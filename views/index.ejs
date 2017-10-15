@@ -7,12 +7,21 @@
 	<h1>All the Pets!</h1>
 	<ul>
 		<% pet.forEach( (pet)=>{%>
-			<li> <%=pet.name %> </li>
-			<li> <%=pet.color %> </li>
-			<li> <%=pet.type %> </li>
-			<li> <%=pet.age %> </li>
+			<li> Name: <%=pet.name %> </li>
+			<li> Color: <%=pet.color %> </li>
+			<li> Type: <%=pet.type %> </li>
+			<li> Age: <%=pet.age %> </li>
+			<button>
+				<a href='/pets/<%=pet._id%>/edit'>Edit</a>
+			</button>
+			<form action='/pets/<%=pet._id%>?_method=DELETE' method='POST'>
+				<button type='submit'>Move to a better home</button>
+			</form>
+			<br>
 		<%})%>
 	</ul>
-
+	<button type='submit'>
+		<a href='/pets/new'>Adopt a pet</a>
+	</button>
 </body>
 </html>

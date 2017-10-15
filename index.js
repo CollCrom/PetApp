@@ -12,7 +12,10 @@ app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
-app.use('/', petController);
+app.use('/pets', petController);
+app.get('/', (req, res)=>{
+	res.redirect('/pets')
+})
 app.listen(5050, () =>{
 	console.log('server is up');
 })
