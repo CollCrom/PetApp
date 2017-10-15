@@ -2,25 +2,31 @@
 <html>
 <head>
 	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src='/js/app.js'></script>
+	<link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
 	<h1>All the Pets!</h1>
-	<ul>
+	<ul class='flex-container'>
 		<% pet.forEach( (pet)=>{%>
 			<li> Name: <%=pet.name %> </li>
 			<li> Color: <%=pet.color %> </li>
 			<li> Type: <%=pet.type %> </li>
 			<li> Age: <%=pet.age %> </li>
-			<button>
+			<button class='btn btn-info'>
 				<a href='/pets/<%=pet._id%>/edit'>Edit</a>
 			</button>
 			<form action='/pets/<%=pet._id%>?_method=DELETE' method='POST'>
-				<button type='submit'>Move to a better home</button>
+				<button class='btn btn-danger' type='submit'>Move to a better home</button>
 			</form>
 			<br>
 		<%})%>
 	</ul>
-	<button type='submit'>
+	<button class='btn btn-info' type='submit'>
 		<a href='/pets/new'>Adopt a pet</a>
 	</button>
 </body>

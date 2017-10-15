@@ -1,0 +1,16 @@
+body {
+  margin: auto 0;
+  font-family: 'Fascinate Inline', cursive;
+  font-size: 2em;
+  text-align: center;
+  background: #89cff0;
+}
+li {
+  display: block;
+}
+ul {
+  padding: 0;
+}
+button {
+  color: black;
+}
